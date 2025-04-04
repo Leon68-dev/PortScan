@@ -157,7 +157,7 @@ namespace portscan
             // btnScan
             // 
             btnScan.FlatStyle = FlatStyle.System;
-            btnScan.Location = new Point(292, 53);
+            btnScan.Location = new Point(586, 46);
             btnScan.Name = "btnScan";
             btnScan.Size = new Size(105, 36);
             btnScan.TabIndex = 18;
@@ -166,14 +166,16 @@ namespace portscan
             // 
             // txtPortEnd
             // 
+            txtPortEnd.BorderStyle = BorderStyle.FixedSingle;
             txtPortEnd.Location = new Point(184, 55);
             txtPortEnd.Name = "txtPortEnd";
             txtPortEnd.Size = new Size(90, 27);
             txtPortEnd.TabIndex = 17;
-            txtPortEnd.Text = "512";
+            txtPortEnd.Text = "10000";
             // 
             // txtPortBeg
             // 
+            txtPortBeg.BorderStyle = BorderStyle.FixedSingle;
             txtPortBeg.Location = new Point(72, 55);
             txtPortBeg.Name = "txtPortBeg";
             txtPortBeg.Size = new Size(68, 27);
@@ -182,9 +184,10 @@ namespace portscan
             // 
             // txtScanHost
             // 
+            txtScanHost.BorderStyle = BorderStyle.FixedSingle;
             txtScanHost.Location = new Point(72, 13);
             txtScanHost.Name = "txtScanHost";
-            txtScanHost.Size = new Size(622, 27);
+            txtScanHost.Size = new Size(619, 27);
             txtScanHost.TabIndex = 14;
             txtScanHost.Text = "127.0.0.1";
             // 
@@ -196,7 +199,7 @@ namespace portscan
             lblPorts.Name = "lblPorts";
             lblPorts.Size = new Size(60, 24);
             lblPorts.TabIndex = 15;
-            lblPorts.Text = "Порты с                        по";
+            lblPorts.Text = "Port beg";
             // 
             // lblHost
             // 
@@ -205,7 +208,7 @@ namespace portscan
             lblHost.Name = "lblHost";
             lblHost.Size = new Size(38, 24);
             lblHost.TabIndex = 13;
-            lblHost.Text = "Хост";
+            lblHost.Text = "Host";
             // 
             // lblScanPort
             // 
@@ -226,12 +229,12 @@ namespace portscan
             label1.Name = "label1";
             label1.Size = new Size(29, 24);
             label1.TabIndex = 26;
-            label1.Text = "по";
+            label1.Text = "end";
             // 
             // PortScan
             // 
             AutoScaleBaseSize = new Size(7, 20);
-            ClientSize = new Size(699, 450);
+            ClientSize = new Size(700, 451);
             Controls.Add(label1);
             Controls.Add(prsScan);
             Controls.Add(groupBox1);
@@ -247,7 +250,9 @@ namespace portscan
             Controls.Add(lblPorts);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "PortScan";
-            Text = "Сетевые инструменты";
+            Opacity = 0.85D;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Port scanner";
             Closed += FMain_Closed;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -312,7 +317,7 @@ namespace portscan
 			if(!this.btnScan.Enabled)
 			{
 				FMainClosed();
-				this.lstRezScan.Items.Add("Сканирование прервано пользователем!");
+				this.lstRezScan.Items.Add("Scanning canceled by user!");
 				this.lstRezScan.Refresh();
 				setCtrlRun(false);
 				
@@ -329,7 +334,7 @@ namespace portscan
 
             if (this.txtScanHost.Text.Length == 0)
             {
-                MessageBox.Show("Ошибка ввода хоста!");
+                MessageBox.Show("Error host!");
                 this.txtScanHost.Focus();
                 return;
             }
@@ -338,7 +343,7 @@ namespace portscan
 
             if (this.txtPortBeg.Text.Length == 0)
             {
-                MessageBox.Show("Ошибка ввода стартового порта!");
+                MessageBox.Show("Error start port!");
                 this.txtPortBeg.Focus();
                 return;
             }
@@ -353,7 +358,7 @@ namespace portscan
             int timeOut = getTrckTimeOutMethod();
 
             this.clearLstRezScanMethod();
-            this.addLstRezScanMethod("Сканирование...");
+            this.addLstRezScanMethod("Scanning...");
             this.refLstRezScanMethod();
 
             setBtnRun(false);
@@ -381,21 +386,6 @@ namespace portscan
             double step = (double)100 / (pEnd - pBeg + 1);
             double stepClc = 0;
 
-            Thread.Sleep(1000);
-
-            //for (int i = pBeg; i <= pEnd; i++)
-            //{
-            //    Thread.Sleep(timeOut);
-            //    curPort = i;
-            //    thr2 = new Thread(new ThreadStart(makeScan));
-            //    thr2.IsBackground = true;
-            //    thr2.Priority = ThreadPriority.Highest;
-            //    thr2.Start();
-            //    Application.DoEvents();
-            //    stepClc += step;
-            //    setPrsScanMethod((int)stepClc);
-            //}
-
             var tasks = new Task[pEnd - pBeg + 1];
             int index = 0;
 
@@ -422,7 +412,7 @@ namespace portscan
                 setPrsScanMethod((int)stepClc);
             }
 
-            addLstRezScanMethod("Сканирование завершено!");
+            addLstRezScanMethod("Scanning finished!");
             refLstRezScanMethod();
 
             setBtnRun(true);
@@ -442,8 +432,7 @@ namespace portscan
 
                     if (completed == connectTask && client.Connected)
                     {
-                        this.addLstRezScanMethod(string.Format("{0} порт открыт", port.ToString()));
-                        Debug.WriteLine(string.Format("{0} порт открыт", port.ToString()));
+                        this.addLstRezScanMethod(string.Format("[+] {0} port open", port.ToString()));
                     }
                 }
                 catch
@@ -570,17 +559,15 @@ namespace portscan
         public delegate void addLstRezScan(string val);
         public void addLstRezScanMethod(string val)
         {
-            //if (this.lstRezScan.InvokeRequired)
-            //{
-            //    addLstRezScan d = new addLstRezScan(addLstRezScanMethod);
-            //    this.Invoke(d, new object[] { val });
-            //}
-            //else
-            //{
-            //    lstRezScan.Items.Add(val);
-            //}
-
-            _ = Invoke(() => lstRezScan.Items.Add(val));
+            if (this.lstRezScan.InvokeRequired)
+            {
+                addLstRezScan d = new addLstRezScan(addLstRezScanMethod);
+                this.Invoke(d, new object[] { val });
+            }
+            else
+            {
+                lstRezScan.Items.Add(val);
+            }
         }
 
         public delegate void refLstRezScan();
