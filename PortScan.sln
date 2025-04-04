@@ -9,24 +9,48 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_PortScanCore", "CS_PortS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortScanCmd", "CS_PortScanCoreCmd\PortScanCmd.csproj", "{7FD753FB-4A7E-40D8-BF6B-9C49D999437E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vc_pscan2", "VC_PortScan\vc_pscan_2.vcxproj", "{A197DA7F-69CF-4B6F-ADC0-AE751545264A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{699734BD-B92F-4B1E-BF23-2039E2BA79C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{699734BD-B92F-4B1E-BF23-2039E2BA79C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699734BD-B92F-4B1E-BF23-2039E2BA79C6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{699734BD-B92F-4B1E-BF23-2039E2BA79C6}.Debug|x86.Build.0 = Debug|Any CPU
 		{699734BD-B92F-4B1E-BF23-2039E2BA79C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{699734BD-B92F-4B1E-BF23-2039E2BA79C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{699734BD-B92F-4B1E-BF23-2039E2BA79C6}.Release|x86.ActiveCfg = Release|Any CPU
+		{699734BD-B92F-4B1E-BF23-2039E2BA79C6}.Release|x86.Build.0 = Release|Any CPU
 		{231C33E9-4052-4240-A424-FDBE56F71FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{231C33E9-4052-4240-A424-FDBE56F71FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{231C33E9-4052-4240-A424-FDBE56F71FF3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{231C33E9-4052-4240-A424-FDBE56F71FF3}.Debug|x86.Build.0 = Debug|Any CPU
 		{231C33E9-4052-4240-A424-FDBE56F71FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{231C33E9-4052-4240-A424-FDBE56F71FF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{231C33E9-4052-4240-A424-FDBE56F71FF3}.Release|x86.ActiveCfg = Release|Any CPU
+		{231C33E9-4052-4240-A424-FDBE56F71FF3}.Release|x86.Build.0 = Release|Any CPU
 		{7FD753FB-4A7E-40D8-BF6B-9C49D999437E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7FD753FB-4A7E-40D8-BF6B-9C49D999437E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD753FB-4A7E-40D8-BF6B-9C49D999437E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7FD753FB-4A7E-40D8-BF6B-9C49D999437E}.Debug|x86.Build.0 = Debug|Any CPU
 		{7FD753FB-4A7E-40D8-BF6B-9C49D999437E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FD753FB-4A7E-40D8-BF6B-9C49D999437E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FD753FB-4A7E-40D8-BF6B-9C49D999437E}.Release|x86.ActiveCfg = Release|Any CPU
+		{7FD753FB-4A7E-40D8-BF6B-9C49D999437E}.Release|x86.Build.0 = Release|Any CPU
+		{A197DA7F-69CF-4B6F-ADC0-AE751545264A}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{A197DA7F-69CF-4B6F-ADC0-AE751545264A}.Debug|Any CPU.Build.0 = Debug|Win32
+		{A197DA7F-69CF-4B6F-ADC0-AE751545264A}.Debug|x86.ActiveCfg = Debug|Win32
+		{A197DA7F-69CF-4B6F-ADC0-AE751545264A}.Debug|x86.Build.0 = Debug|Win32
+		{A197DA7F-69CF-4B6F-ADC0-AE751545264A}.Release|Any CPU.ActiveCfg = Release|Win32
+		{A197DA7F-69CF-4B6F-ADC0-AE751545264A}.Release|Any CPU.Build.0 = Release|Win32
+		{A197DA7F-69CF-4B6F-ADC0-AE751545264A}.Release|x86.ActiveCfg = Release|Win32
+		{A197DA7F-69CF-4B6F-ADC0-AE751545264A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

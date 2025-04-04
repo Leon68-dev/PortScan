@@ -12,3 +12,8 @@
 /CS_PortScanCoreCmd/obj/*
 /CS_PortScanCoreCmd/PortScanCmd.csproj.user
 
+
+/VC_PortScan/Debug/*
+/VC_PortScan/Release/*
+/VC_PortScan/vc_pscan_2.vcxproj.user
+
