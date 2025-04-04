@@ -1,0 +1,14 @@
+/.vs
+
+/CS_PortScan/bin/*
+/CS_PortScan/obj/*
+/CS_PortScan/CS_PortScan.csproj.user
+
+/CS_PortScanCore/bin/*
+/CS_PortScanCore/obj/*
+/CS_PortScanCore/CS_PortScanCore.csproj.user
+
+/CS_PortScanCoreCmd/bin/*
+/CS_PortScanCoreCmd/obj/*
+/CS_PortScanCoreCmd/PortScanCmd.csproj.user
+
