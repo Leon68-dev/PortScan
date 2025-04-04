@@ -16,4 +16,5 @@
 /VC_PortScan/Debug/*
 /VC_PortScan/Release/*
 /VC_PortScan/vc_pscan_2.vcxproj.user
+/VC_PortScan/.vs/*
 
